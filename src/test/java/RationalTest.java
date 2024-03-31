@@ -16,7 +16,13 @@ class RationalTest {
 
     @Test
     void sub() {
+        Rational rational1=new Rational(1,2);
+        Rational rational2=new Rational(1,3);
 
+        Rational result =rational1.sub(rational2);
+
+        assertEquals(1,result.getNumerator());
+        assertEquals(6,result.getDenominator());
     }
 
     @Test
