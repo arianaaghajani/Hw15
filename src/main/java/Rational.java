@@ -42,6 +42,10 @@ public class Rational {
         return new Rational(newNumerator,newDenominator);
     }
 
+    public double toFloatingPoint(){
+        return (double) numerator / denominator;
+    }
+
     @Override
     public String toString() {
         return "Rational{" +
