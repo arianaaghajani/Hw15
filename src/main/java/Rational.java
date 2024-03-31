@@ -22,4 +22,10 @@ public class Rational {
         return new Rational(newNumerator,newDenominator);
     }
 
+    public Rational mul(Rational other){
+        int newNumerator= this.numerator * other.numerator;
+        int newDenominator = this.denominator * other.denominator;
+        return new Rational(newNumerator,newDenominator);
+    }
+
 }
