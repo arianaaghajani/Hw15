@@ -39,5 +39,12 @@ class RationalTest {
 
     @Test
     void div() {
+        Rational rational1=new Rational(1,2);
+        Rational rational2=new Rational(1,3);
+
+        Rational result =rational1.div(rational2);
+
+        assertEquals(3,result.getNumerator());
+        assertEquals(2,result.getDenominator());
     }
 }
