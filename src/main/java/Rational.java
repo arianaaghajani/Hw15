@@ -34,4 +34,11 @@ public class Rational {
         return new Rational(newNumerator,newDenominator);
     }
 
+    @Override
+    public String toString() {
+        return "Rational{" +
+                "numerator=" + numerator +
+                ", denominator=" + denominator +
+                '}';
+    }
 }
