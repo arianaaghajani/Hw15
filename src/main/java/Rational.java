@@ -28,4 +28,10 @@ public class Rational {
         return new Rational(newNumerator,newDenominator);
     }
 
+    public Rational div(Rational other) {
+        int newNumerator = this.numerator * other.denominator;
+        int newDenominator = this.denominator * other.numerator;
+        return new Rational(newNumerator,newDenominator);
+    }
+
 }
