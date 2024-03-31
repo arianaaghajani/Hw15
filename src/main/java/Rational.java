@@ -10,8 +10,10 @@ public class Rational {
         this.denominator = denominator;
     }
 
-    //public Rational(int numerator,int denominator){
-
+    public Rational add(Rational other){
+        int newNumerator =this.numerator * other.denominator + other.numerator * this.denominator;
+        int newDenominator= this.denominator * other.denominator;
+        return new Rational(newNumerator,newDenominator);
     }
 
 }
