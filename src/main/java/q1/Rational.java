@@ -1,3 +1,5 @@
+package q1;
+
 public class Rational {
     int numerator;
     int denominator;
@@ -48,7 +50,7 @@ public class Rational {
 
     @Override
     public String toString() {
-        return "Rational{" +
+        return "q1.Rational{" +
                 "numerator=" + numerator +
                 ", denominator=" + denominator +
                 '}';
