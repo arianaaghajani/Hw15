@@ -47,4 +47,20 @@ class RationalTest {
         assertEquals(3,result.getNumerator());
         assertEquals(2,result.getDenominator());
     }
+
+    @Test
+    void toFloatingPoint() {
+        Rational rational1=new Rational(1,2);
+        Rational rational2=new Rational(1,3);
+
+        Rational result1 = rational1;
+        Rational result2 = rational2;
+
+        assertEquals(1,result1.getNumerator());
+        assertEquals(2,result1.getDenominator());
+
+        assertEquals(1,result2.getNumerator());
+        assertEquals(3,result2.getDenominator());
+
+    }
 }
