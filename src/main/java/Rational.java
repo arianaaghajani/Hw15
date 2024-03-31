@@ -16,4 +16,10 @@ public class Rational {
         return new Rational(newNumerator,newDenominator);
     }
 
+    public Rational sub(Rational other){
+        int newNumerator= this.numerator * other.denominator - other.numerator * this.denominator;
+        int newDenominator= this.denominator * other.denominator;
+        return new Rational(newNumerator,newDenominator);
+    }
+
 }
