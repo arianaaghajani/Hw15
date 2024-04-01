@@ -20,4 +20,13 @@ public class PersonRepository {
             .buildSessionFactory();
 
 
+    public void save(Person person){
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        session.merge(person);
+        transaction.commit();
+        session.close();
+
+    }
+
 }
