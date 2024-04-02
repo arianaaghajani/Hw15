@@ -60,4 +60,12 @@ public class PersonRepository {
             transaction.commit();
             session.close();
         }
+
+        public void update(Person person){
+            Session session = sessionFactory.openSession();
+            Transaction transaction = session.beginTransaction();
+            session.merge(person);
+            transaction.commit();
+            session.close();
+        }
 }
