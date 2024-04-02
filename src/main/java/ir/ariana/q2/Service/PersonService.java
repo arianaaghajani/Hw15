@@ -9,4 +9,8 @@ public class PersonService {
     public void save(Person person){
         personRepository.save(person);
     }
+
+    public Person findById(Long id){
+        return personRepository.findById(id);
+    }
 }
