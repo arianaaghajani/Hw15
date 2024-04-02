@@ -19,4 +19,8 @@ public class PersonService {
     public List<Person> findAll(){
         return personRepository.findAll();
     }
+
+    public void delete(Long id){
+        personRepository.delete(id);
+    }
 }
