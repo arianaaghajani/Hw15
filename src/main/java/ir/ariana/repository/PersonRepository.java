@@ -7,6 +7,11 @@ import org.hibernate.Transaction;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.query.Query;
+
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PersonRepository {
         StandardServiceRegistry build = new StandardServiceRegistryBuilder()
@@ -34,5 +39,16 @@ public class PersonRepository {
             transaction.commit();
             session.close();
             return person;
+        }
+
+        public List<Person> findAll(){
+            Session session = sessionFactory.openSession();
+            Transaction transaction = session.beginTransaction();
+            String hql="from Person";
+            Query<Person> fromPerson = session.createQuery(hql, Person.class);
+            List<Person> listOfPerson = fromPerson.list();
+            transaction.commit();
+            session.close();
+            return listOfPerson;
         }
 }
