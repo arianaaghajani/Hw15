@@ -51,4 +51,13 @@ public class PersonRepository {
             session.close();
             return listOfPerson;
         }
+
+        public void delete(Long id){
+            Session session = sessionFactory.openSession();
+            Transaction transaction = session.beginTransaction();
+            Person person = session.get(Person.class, id);
+            session.delete(person);
+            transaction.commit();
+            session.close();
+        }
 }
