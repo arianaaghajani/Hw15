@@ -1,4 +1,4 @@
-package ir.ariana.q2;
+package ir.ariana.q2.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -6,7 +6,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.*;
 
-@Getter
+import java.util.Date;
+
+//@Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,11 +20,16 @@ public class Person {
     private Long id;
     private String name;
     private String lastName;
-    private String birthDate;
+    private Date birthDate;
 
-    public Person(String name, String lastName, String birthDate) {
+    public Person(String name, String lastName, Date birthDate) {
         this.name = name;
         this.lastName = lastName;
         this.birthDate = birthDate;
+    }
+
+    public Person(String name, String lastName) {
+        this.name=name;
+        this.lastName=lastName;
     }
 }
