@@ -27,5 +27,14 @@ public class PersonService {
     public void update(Person person){
         personRepository.update(person);
     }
+    public Person signUp(String name,String lastName){
+        Person person = new Person(name, lastName);
+        personRepository.save(person);
+        return person;
+    }
+
+//    public boolean contains(String name,String lastName){
+//        return this.name.equals(name) && this.lastName.equals(lastName);
+//    }
 
 }
