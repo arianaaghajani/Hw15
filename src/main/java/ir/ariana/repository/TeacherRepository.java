@@ -35,5 +35,13 @@ public abstract class TeacherRepository extends PersonRepository{
         session.close();
     }
 
+    public void update(Teacher teacher){
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        session.merge(teacher);
+        transaction.commit();
+        session.close();
+    }
+
 
 }
