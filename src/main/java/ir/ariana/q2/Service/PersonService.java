@@ -1,6 +1,6 @@
 package ir.ariana.q2.Service;
 
-import ir.ariana.q2.Person;
+import ir.ariana.q2.model.Person;
 import ir.ariana.repository.PersonRepository;
 
 import java.util.List;
@@ -23,4 +23,9 @@ public class PersonService {
     public void delete(Long id){
         personRepository.delete(id);
     }
+
+    public void update(Person person){
+        personRepository.update(person);
+    }
+
 }
