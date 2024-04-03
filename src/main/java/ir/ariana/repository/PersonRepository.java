@@ -1,6 +1,6 @@
 package ir.ariana.repository;
 
-import ir.ariana.q2.Person;
+import ir.ariana.q2.model.Person;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -9,8 +9,6 @@ import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.query.Query;
 
-import java.awt.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class PersonRepository {
@@ -23,8 +21,7 @@ public class PersonRepository {
                 .buildMetadata()
                 .buildSessionFactory();
 
-
-        public void save(Person person) {
+    public void save(Person person) {
             Session session = sessionFactory.openSession();
             Transaction transaction = session.beginTransaction();
             session.persist(person);

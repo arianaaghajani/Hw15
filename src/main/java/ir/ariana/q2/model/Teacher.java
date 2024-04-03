@@ -1,5 +1,5 @@
 package ir.ariana.q2.model;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
@@ -10,12 +10,22 @@ import java.util.Date;
 @Setter
 @ToString
 @Entity
+@Table(name = "teacher")
 public class Teacher extends Person {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String teacherId;
     private String degreeOfEducation;
+//    @Enumerated(EnumType.STRING)
     private String teacherGrade;
     private double monthlySalary;
+
+    public Teacher(String teacherId, String degreeOfEducation, String teacherGrade) {
+        this.teacherId=teacherId;
+        this.degreeOfEducation=degreeOfEducation;
+        this.teacherGrade=teacherGrade;
+    }
 
     public enum TeacherGrade{
         ASSISTANT_PROFESSOR,

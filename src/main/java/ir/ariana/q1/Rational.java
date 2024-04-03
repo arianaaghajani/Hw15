@@ -1,4 +1,4 @@
-package q1;
+package ir.ariana.q1;
 
 public class Rational {
     int numerator;

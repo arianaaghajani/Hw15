@@ -1,5 +1,5 @@
 import org.junit.jupiter.api.Test;
-import q1.Rational;
+import ir.ariana.q1.Rational;
 
 import static org.junit.jupiter.api.Assertions.*;
 class RationalTest {

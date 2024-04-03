@@ -1,7 +1,6 @@
 package ir.ariana.q2.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
@@ -12,8 +11,10 @@ import java.util.Date;
 @Setter
 @ToString
 @Entity
+@Table(name = "student")
 public class Student extends Person {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String studentId;
     private String fieldOfStudy;
