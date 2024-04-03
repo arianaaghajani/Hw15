@@ -4,6 +4,9 @@ import ir.ariana.q2.model.Person;
 import ir.ariana.q2.model.Teacher;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+
+import java.util.List;
 
 public abstract class TeacherRepository extends PersonRepository{
     public void save(Teacher teacher) {
@@ -22,4 +25,15 @@ public abstract class TeacherRepository extends PersonRepository{
         session.close();
         return teacher;
     }
+
+    public void delete(Long id){
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        Teacher teacher= session.get(Teacher.class, id);
+        session.delete(teacher);
+        transaction.commit();
+        session.close();
+    }
+
+
 }
